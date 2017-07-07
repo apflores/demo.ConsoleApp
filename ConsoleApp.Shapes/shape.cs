@@ -39,7 +39,7 @@ namespace ConsoleApp.Shapes
 		{
             if (this.length * this.width == 0)
             {
-                throw new Exception($"area is 0, length is {length}, width is {width}");
+                throw new ShapeZeroAreaException($"area is 0, length is {length}, width is {width}");
             };
             return this.length * this.width;
 		}

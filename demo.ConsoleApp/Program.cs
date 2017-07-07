@@ -30,6 +30,11 @@ namespace demo.ConsoleApp
             {
                 sq.Area();
             }
+            catch (ShapeZeroAreaException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            //good practice to have catch all exception
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
@@ -50,6 +55,9 @@ namespace demo.ConsoleApp
                 //will need to caste back to a triangle before using Triangle area method
             }
             #endregion
+
+            List<Shape> findResult = shapes.FindAll(shapeList => shapeList.Area() > 4);
+            findResult.Insert(findResult.Count, new Rectangle(4, 6));
 
         }
     }
